@@ -255,21 +255,6 @@ class Leetcode:
         self.num_lock = len([i for i in self.items if i.is_lock])
         self.items.reverse()
 
-    def load(self):
-        """
-        load: all in one
-
-        login -> load api -> load submissions -> solutions to items
-        return `all in one items`
-        """
-        # if cookie is valid, get api_url twice
-        # TODO: here can optimize
-        if not self.is_login:
-            self.login()
-        self.load_items_from_api()
-        self.load_submissions()
-        self.load_solutions_to_items()
-
     def _generate_items_from_api(self, json_data):
         stat_status_pairs = json_data['stat_status_pairs']
         for quiz in stat_status_pairs:
@@ -384,6 +369,21 @@ class Leetcode:
             title = solution['title']
             if title in itemdict.keys():
                 itemdict[title].solutions.append(solution)
+
+    def load(self):
+        """
+        load: all in one
+
+        login -> load api -> load submissions -> solutions to items
+        return `all in one items`
+        """
+        # if cookie is valid, get api_url twice
+        # TODO: here can optimize
+        if not self.is_login:
+            self.login()
+        self.load_items_from_api()
+        self.load_submissions()
+        self.load_solutions_to_items()
 
     def _get_code_by_solution(self, solution):
         """
@@ -610,7 +610,6 @@ def do_job(leetcode):
         # we use multi thread
         print('download all leetcode solutions')
         # leetcode.download_with_thread_pool()
-        print(leetcode.items)
         leetcode.download()
     else:
         for qid in sys.argv[1:]:
