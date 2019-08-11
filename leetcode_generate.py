@@ -459,7 +459,6 @@ class Leetcode:
         slts = list(
             filter(lambda i: i['lang'] in self.languages, quiz.solutions)
         )
-        print(slts)
         if not slts:
             print(
                 'No solution with the set languages in question:{}-{}'.format(
@@ -504,6 +503,7 @@ class Leetcode:
         ac_items = [i for i in self.items if i.is_pass]
         for quiz in ac_items:
             time.sleep(1)
+            print(quiz)
             self._download_code_by_quiz(quiz)
 
     def download_with_thread_pool(self):
