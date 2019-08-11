@@ -25,7 +25,7 @@ SOLUTION_FOLDER_NAME = 'solutions'
 SOLUTION_FOLDER = Path.joinpath(HOME, SOLUTION_FOLDER_NAME)
 CONFIG_FILE = Path.joinpath(HOME, 'config.cfg')
 COOKIE_PATH = Path.joinpath(HOME, 'cookies.json')
-BASE_URL = 'https://leetcode-cn.com'
+BASE_URL = 'https://leetcode.com'
 # If you have proxy, change PROXIES below
 PROXIES = None
 HEADERS = {
@@ -34,7 +34,7 @@ HEADERS = {
     'Accept-Language': 'zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4',
     'Connection': 'keep-alive',
     'Content-Type': 'application/x-www-form-urlencoded',
-    'Host': 'leetcode-cn.com',
+    'Host': 'leetcode.com',
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',  # NOQA
 }
 
@@ -218,7 +218,7 @@ class Leetcode:
         # driver.find_element_by_id('id_remember').click()
         btns = driver.find_elements_by_tag_name('button')
         # print(btns)
-        submit_btn = btns[0]
+        submit_btn = btns[1]
         submit_btn.click()
 
         time.sleep(5)
@@ -547,7 +547,7 @@ If you are loving solving problems in leetcode, please contact me to enjoy it to
         for item in self.items:
             article = ''
             if item.question__article__slug:
-                article = '[:memo:](https://leetcode-cn.com/articles/{article}/)'.format(
+                article = '[:memo:](https://leetcode.com/articles/{article}/)'.format(
                     article=item.question__article__slug
                 )
             if item.is_lock:
