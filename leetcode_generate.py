@@ -501,7 +501,6 @@ class Leetcode:
     def download(self):
         """ download all solutions with single thread """
         ac_items = [i for i in self.items if i.is_pass]
-        print(self.items)
         for quiz in ac_items:
             time.sleep(1)
             self._download_code_by_quiz(quiz)
