@@ -454,7 +454,7 @@ class Leetcode:
         Download code by quiz
         quiz: type QuizItem
         """
-        print(self)
+        print(self.languages)
         qid = quiz.question_id
         qtitle = quiz.question__title_slug
         slts = list(
