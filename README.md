@@ -1,5 +1,5 @@
-# :pencil2: Leetcode Solutions with Python,Cpp
-Update time:  2019-08-11 14:12:36
+# :pencil2: Leetcode Solutions with C,Cpp
+Update time:  2019-08-11 14:28:46
 
 Auto created by [leetcode_generate](https://github.com/bonfy/leetcode)
 
