@@ -455,6 +455,7 @@ class Leetcode:
         quiz: type QuizItem
         """
         print(self.languages)
+        print(quiz.solutions)
         qid = quiz.question_id
         qtitle = quiz.question__title_slug
         slts = list(
