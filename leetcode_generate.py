@@ -454,8 +454,6 @@ class Leetcode:
         Download code by quiz
         quiz: type QuizItem
         """
-        print(self.languages)
-        print(quiz)
         qid = quiz.question_id
         qtitle = quiz.question__title_slug
         slts = list(
@@ -503,6 +501,7 @@ class Leetcode:
     def download(self):
         """ download all solutions with single thread """
         ac_items = [i for i in self.items if i.is_pass]
+        print(ac_items)
         for quiz in ac_items:
             time.sleep(1)
             self._download_code_by_quiz(quiz)
